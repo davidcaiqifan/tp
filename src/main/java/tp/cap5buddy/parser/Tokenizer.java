@@ -5,7 +5,7 @@ package tp.cap5buddy.parser;
  * Represents the token of each user input.
  */
 public class Tokenizer {
-    private static final int SIZE = 2; // updates as the number of prefixes increases.
+    private static final int SIZE = 3; // updates as the number of prefixes increases.
     private String[] words = new String[SIZE];
     private String input;
 
@@ -30,8 +30,8 @@ public class Tokenizer {
                 this.words[0] = word;
             } else if (prefix.equals(PrefixList.MODULE_LINK_PREFIX.toString())) {
                 this.words[1] = word;
-            } else {
-                // throws error as invalid prefix is found
+            } else if (prefix.equals(PrefixList.MODULE_VIEW_PREFIX.toString())) {
+                this.words[2] = word;
             }
         }
     }

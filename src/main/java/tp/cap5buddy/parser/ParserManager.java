@@ -42,6 +42,11 @@ public class ParserManager {
             parser.parse(words);
             result = parser.execute();
             break;
+        case "viewmodule":
+            ViewModuleParser viewParser = new ViewModuleParser();
+            viewParser.parse(words);
+            result = viewParser.execute();
+            break;
         default:
             result = new ResultCommand("Nothing happens");
         }
