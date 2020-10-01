@@ -36,6 +36,14 @@ public class ModuleList {
     }
 
     /**
+     * Retreives the current list of modules
+     * @return Current list of modules.
+     */
+    public List<Module> getModules() {
+        return this.modules;
+    }
+
+    /**
      * Adds a module.
      *
      * @param module

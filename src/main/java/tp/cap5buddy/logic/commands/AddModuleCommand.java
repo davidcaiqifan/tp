@@ -10,6 +10,8 @@ public class AddModuleCommand extends Command {
     private static final String SUCCESS_MESSAGE = " has been added successfully!";
     private final String name;
     private final String link;
+    private final String grade;
+    private final String credits;
 
     /**
      * Represents the constuctor to making the AddModuleCommand object.
@@ -18,6 +20,8 @@ public class AddModuleCommand extends Command {
     public AddModuleCommand(String[] info) {
         this.name = info[0];
         this.link = info[1];
+        this.grade = info[4];
+        this.credits = info[5];
     }
 
     /**
@@ -25,16 +29,25 @@ public class AddModuleCommand extends Command {
      * @return ResultCommand ResultCommand object.
      */
     public ResultCommand execute(ModuleList modules) {
-        if (this.link == null) {
+        if (this.link == null && this.grade == null) {
             Module mod = new Module(this.name);
             modules.addModule(mod);
-        } else {
+        } else if (this.grade == null && this.credits == null) {
             Module mod = new Module(this.name, this.link);
+            modules.addModule(mod);
+        } else if (this.credits == null) {
+            double grade = Double.parseDouble(this.grade);
+            Module mod = new Module(this.name, this.link, grade);
+            modules.addModule(mod);
+        }
+        else {
+            double grade = Double.parseDouble(this.grade);
+            double credits = Double.parseDouble(this.credits);
+            Module mod = new Module(this.name, this.link, grade, credits);
             modules.addModule(mod);
         }
         return new ResultCommand(this.name + SUCCESS_MESSAGE, isExit());
     }
-
     @Override
     public boolean isExit() {
         return false;

@@ -36,6 +36,12 @@ public class Prefix {
         case "v/":
             res = true;
             break;
+        case "g/":
+            res = true;
+            break;
+        case "c/":
+            res = true;
+            break;
         default:
             res = false;
         }
