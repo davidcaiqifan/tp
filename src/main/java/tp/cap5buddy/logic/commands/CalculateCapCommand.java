@@ -12,11 +12,7 @@ import tp.cap5buddy.modules.ModuleList;
  */
 public class CalculateCapCommand extends Command {
     private static final String SUCCESS_MESSAGE = "Module details have been displayed successfully!";
-    private ArrayList<Module> modules;
-    private String moduleName;
-
-    public CalculateCapCommand(String[] commandArguments) {
-        this.moduleName = commandArguments[3];
+    public CalculateCapCommand() {
     }
 
     /**

@@ -40,7 +40,7 @@ public class Module {
      * @param grade module grade
      * @param credits modular credits;
      */
-    public Module(String name, String zoomLink, double grade, double credits) {
+    public Module(String name, String zoomLink, double credits, double grade) {
         this.name = name;
         this.zoomLink = zoomLink;
         this.grade = grade;
