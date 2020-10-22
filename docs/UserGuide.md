@@ -55,18 +55,15 @@ Creates and add a new module to be stored in the system.
    with the specified link into the system.
    * `add module CS2103T` creates and add the module CS2103T with no zoom link.
 
-### Viewing a module: `view`
+### Viewing a module: `viewmodule`
 
-Views a module stored in the system
+Views a specific module stored in the system
 
- Format: `view` **_`[MODULE_NAME]`_**
-
-  * Using the keyword all in place of specified module name will display all module details
-
+ Format: `viewmodule` **_`n/[MODULE_NAME]`_**
 
   Examples:
-  * `view cs2103t` views the specified module
-  * `view all` views all the modules stored
+  * `viewmodule n/cs2103t` views the specified module
+
 
 ### Adding a zoom link to a module: `add zoom`
 
