@@ -10,26 +10,26 @@ import seedu.address.logic.commands.Command;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
+import seedu.address.model.task.Status;
 import seedu.address.model.task.Task;
 
-
 /**
- * Deletes a task identified using it's displayed index from the todo list.
+ * Reset status of a task identified using it's displayed index from the todo list from completed to not completed.
  */
-public class DeleteTaskCommand extends Command {
+public class ResetTaskCommand extends Command {
 
-    public static final String COMMAND_WORD = "deletetask";
+    public static final String COMMAND_WORD = "resettask";
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-        + ": Deletes the task identified by the index number used in the displayed todo list.\n"
+        + ": Change status of a task from COMPLETED to NOT COMPLETED.\n"
         + "Parameters: INDEX (must be a positive integer)\n"
-        + "Example: " + COMMAND_WORD + " 1";
+        + "Example: " + COMMAND_WORD + " 1 \n";
 
-    public static final String MESSAGE_DELETE_TASK_SUCCESS = "Deleted Task: %1$s";
+    public static final String MESSAGE_RESET_TASK_SUCCESS = "This task is not completed now : %1$s";
 
     private final Index targetIndex;
 
-    public DeleteTaskCommand(Index targetIndex) {
+    public ResetTaskCommand(Index targetIndex) {
         this.targetIndex = targetIndex;
     }
 
@@ -42,16 +42,17 @@ public class DeleteTaskCommand extends Command {
             throw new CommandException(Messages.MESSAGE_INVALID_TASK_DISPLAYED_INDEX);
         }
 
-        Task taskToDelete = lastShownList.get(targetIndex.getZeroBased());
-        model.deleteTask(taskToDelete);
-        return new CommandResult(String.format(MESSAGE_DELETE_TASK_SUCCESS, taskToDelete));
+        Task taskToReset = lastShownList.get(targetIndex.getZeroBased());
+        Task resetTask = taskToReset.setStatus(Status.COMPLETED);
+        model.setTask(taskToReset, resetTask);
+        return new CommandResult(String.format(MESSAGE_RESET_TASK_SUCCESS, taskToReset));
     }
 
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-            || (other instanceof DeleteTaskCommand // instanceof handles nulls
-            && targetIndex.equals(((DeleteTaskCommand) other).targetIndex)); // state check
+            || (other instanceof ResetTaskCommand // instanceof handles nulls
+            && targetIndex.equals(((ResetTaskCommand) other).targetIndex)); // state check
     }
 
     @Override
