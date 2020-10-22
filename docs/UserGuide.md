@@ -99,6 +99,32 @@ Examples:
 * `edit zoom CS2030 https://sample.zoom.us` edits the zoom link for a module named `CS2030`
   to `https://sample.zoom.us`
 
+### Calculating Cumulative Average Point(CAP): `calculatecap`
+
+Calculates the user's CAP based on completed modules
+
+ Format: `calculatecap`
+
+  Examples:
+  * `calculatecap` calculate the user's cap
+  
+### Undo previous user command: `undo`
+
+Undoes the previous user command
+
+ Format: `undo`
+
+  Examples:
+  * `undo` 
+  
+### Undo previous user command: `redo`
+
+Redoes the previously undone user command
+
+ Format: `redo`
+
+  Examples:
+  * `redo`   
 --------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
@@ -115,8 +141,11 @@ Examples:
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add module KEYWORD`<br> e.g., `add module CS2103T [link]`, `add module CS2103T`
-**View** | `view KEYWORD `<br> e.g., `view cs2101` , `view all`
-**Delete** | `delete KEYWORD `<br> e.g., `delete 3`
-**Edit** | `edit zoom MODULE_NAME ZOOM_LINK`<br> e.g., `edit zoom CS2103T https://sample.zoom.us`
-**Add Zoom** | `add zoom MODULE_NAME ZOOM_LINK` <br> e.g., `add zoom cs2103T https://sample.zoom.us`
+**Add** | `add module KEYWORD`<br> e.g. `add module CS2103T [link]`, `add module CS2103T`
+**View** | `view KEYWORD `<br> e.g. `view cs2101` , `view all`
+**Delete** | `delete KEYWORD `<br> e.g. `delete 3`
+**Edit** | `edit zoom MODULE_NAME ZOOM_LINK`<br> e.g. `edit zoom CS2103T https://sample.zoom.us`
+**Add Zoom** | `add zoom MODULE_NAME ZOOM_LINK` <br> e.g. `add zoom cs2103T https://sample.zoom.us`
+**Calculate CAP** | `calculatecap` <br> e.g. `calculatecap`
+**Undo** | `undo` <br> e.g. `undo`
+**Redo** | `redo` <br> e.g. `redo`
