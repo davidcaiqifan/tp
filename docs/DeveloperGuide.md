@@ -126,9 +126,8 @@ completed for that module and a grade for that module.
 ## Contact List
 
 ![Structure of the Contact List Component](images/ContactListDiagram.png)
-
 The Contact List that is stored in the model contains a list of contacts. The Contact List stores a 
-Unique Contact List prevents duplicate contacts from being added.Each contact stored has their Name, 
+Unique Contact List prevents duplicate contacts from being added.Each contact stored has their Name,
 Email address and Telegram handle stored with it.
 
 ## Todo List
@@ -136,7 +135,6 @@ Email address and Telegram handle stored with it.
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Implementation**
-
 This section describes some noteworthy details on how certain features are implemented.
 
 ### \[Proposed\] Undo/redo feature
