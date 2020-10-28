@@ -1,15 +1,10 @@
 package seedu.address.storage;
 
-/*import static org.junit.jupiter.api.Assertions.assertEquals;
-import static seedu.address.storage.JsonAdaptedModule.MISSING_FIELD_MESSAGE_FORMAT;
-import static seedu.address.testutil.Assert.assertThrows;*/
-
 import org.junit.jupiter.api.Test;
 import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.contact.Email;
 import seedu.address.model.contact.Name;
 import seedu.address.model.contact.Telegram;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -88,14 +83,6 @@ public class JsonAdaptedContactTest {
         JsonAdaptedContact contact =
                 new JsonAdaptedContact(VALID_NAME, VALID_EMAIL, INVALID_TELEGRAM, VALID_TAGS);
         String expectedMessage = Telegram.MESSAGE_CONSTRAINTS;
-        assertThrows(IllegalValueException.class, expectedMessage, contact::toModelType);
-    }
-
-    @Test
-    public void toModelType_nullTelegram_throwsIllegalValueException() {
-        JsonAdaptedContact contact =
-                new JsonAdaptedContact(VALID_NAME, VALID_EMAIL, null, VALID_TAGS);
-        String expectedMessage = String.format(MISSING_FIELD_MESSAGE_FORMAT, Telegram.class.getSimpleName());
         assertThrows(IllegalValueException.class, expectedMessage, contact::toModelType);
     }
 }
