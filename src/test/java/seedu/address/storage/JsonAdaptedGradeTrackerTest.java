@@ -2,7 +2,6 @@ package seedu.address.storage;
 
 import org.junit.jupiter.api.Test;
 import seedu.address.commons.exceptions.IllegalValueException;
-import seedu.address.model.module.ModuleName;
 import seedu.address.model.module.grade.Assignment;
 import seedu.address.model.module.grade.Grade;
 import seedu.address.model.module.grade.GradeTracker;

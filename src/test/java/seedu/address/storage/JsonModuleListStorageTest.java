@@ -47,7 +47,7 @@ public class JsonModuleListStorageTest {
 
     @Test
     public void read_notJsonFormat_exceptionThrown() {
-        assertThrows(DataConversionException.class, () -> readModuleList("notJsonFormatAddressBook.json"));
+        assertThrows(DataConversionException.class, () -> readModuleList("notJsonFormatModuleList.json"));
     }
 
     @Test

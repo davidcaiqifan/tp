@@ -45,7 +45,6 @@ public class JsonModuleListStorage implements ModuleListStorage {
      */
     public Optional<ReadOnlyModuleList> readModuleList(Path filePath) throws DataConversionException {
         requireNonNull(filePath);
-
         Optional<JsonSerializableModuleList> jsonModuleList = JsonUtil.readJsonFile(
                 filePath, JsonSerializableModuleList.class);
         if (!jsonModuleList.isPresent()) {
