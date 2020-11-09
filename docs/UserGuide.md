@@ -30,7 +30,7 @@ details and information more efficiently than traditional GUI apps.
 1. Copy the file to the folder you want to use as the _home folder_ for the CAP5Buddy application.
 
 1. Double-click the file to start the app. The GUI similar to the one below should appear in a few seconds. <br>
-![GUI](images/UI.png)
+![GUI](images/Ui.png)
 
 --------------------------------------------------------------------------------------------------------------------
 
